@@ -11,6 +11,7 @@
 		050E02E5294C4B26005EF95E /* TopicList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E02E3294C4B26005EF95E /* TopicList+CoreDataClass.swift */; };
 		050E02E6294C4B26005EF95E /* TopicList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E02E4294C4B26005EF95E /* TopicList+CoreDataProperties.swift */; };
 		050E02E9294C5A85005EF95E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E02E8294C5A85005EF95E /* TableViewCell.swift */; };
+		050E02EB294C6694005EF95E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 050E02EA294C6694005EF95E /* .gitignore */; };
 		05357199294C459A007307EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05357198294C459A007307EE /* AppDelegate.swift */; };
 		0535719B294C459A007307EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0535719A294C459A007307EE /* SceneDelegate.swift */; };
 		0535719D294C459A007307EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0535719C294C459A007307EE /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		050E02E3294C4B26005EF95E /* TopicList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopicList+CoreDataClass.swift"; sourceTree = "<group>"; };
 		050E02E4294C4B26005EF95E /* TopicList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopicList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		050E02E8294C5A85005EF95E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		050E02EA294C6694005EF95E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		05357195294C459A007307EE /* newTeddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newTeddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05357198294C459A007307EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0535719A294C459A007307EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		0535718C294C459A007307EE = {
 			isa = PBXGroup;
 			children = (
+				050E02EA294C6694005EF95E /* .gitignore */,
 				05357197294C459A007307EE /* newTeddit */,
 				05357196294C459A007307EE /* Products */,
 			);
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050E02EB294C6694005EF95E /* .gitignore in Resources */,
 				053571A8294C459B007307EE /* LaunchScreen.storyboard in Resources */,
 				053571A5294C459B007307EE /* Assets.xcassets in Resources */,
 				053571A0294C459A007307EE /* Main.storyboard in Resources */,
