@@ -2,7 +2,7 @@
 //  Posts+CoreDataClass.swift
 //  newTeddit
 //
-//  Created by prk on 18/12/22.
+//  Created by prk on 19/12/22.
 //
 //
 

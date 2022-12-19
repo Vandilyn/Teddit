@@ -63,6 +63,7 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
         let newPost = Posts(context: context)
         newPost.judul = name
         newPost.author = "ANON"
+//        newPost.topic =
         do{
             try context.save()
             getAllItems()

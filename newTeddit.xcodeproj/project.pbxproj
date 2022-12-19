@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		050E02DD294C4792005EF95E /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E02DC294C4792005EF95E /* TopicViewController.swift */; };
-		050E02E5294C4B26005EF95E /* TopicList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E02E3294C4B26005EF95E /* TopicList+CoreDataClass.swift */; };
-		050E02E6294C4B26005EF95E /* TopicList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E02E4294C4B26005EF95E /* TopicList+CoreDataProperties.swift */; };
 		050E02E9294C5A85005EF95E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E02E8294C5A85005EF95E /* TableViewCell.swift */; };
 		050E02EB294C6694005EF95E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 050E02EA294C6694005EF95E /* .gitignore */; };
 		05357199294C459A007307EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05357198294C459A007307EE /* AppDelegate.swift */; };
@@ -21,14 +19,15 @@
 		053571A8294C459B007307EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053571A6294C459B007307EE /* LaunchScreen.storyboard */; };
 		057E6F4E29502CEE00BA40A6 /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F4D29502CEE00BA40A6 /* postViewController.swift */; };
 		057E6F5029502D1B00BA40A6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F4F29502D1B00BA40A6 /* PostTableViewCell.swift */; };
-		057E6F582950310B00BA40A6 /* Posts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F562950310B00BA40A6 /* Posts+CoreDataClass.swift */; };
-		057E6F592950310B00BA40A6 /* Posts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F572950310B00BA40A6 /* Posts+CoreDataProperties.swift */; };
+		057E6F5C29504A6900BA40A6 /* postInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F5B29504A6900BA40A6 /* postInfoViewController.swift */; };
+		057E6F7129505B8700BA40A6 /* TopicList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F6D29505B8700BA40A6 /* TopicList+CoreDataClass.swift */; };
+		057E6F7229505B8700BA40A6 /* TopicList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F6E29505B8700BA40A6 /* TopicList+CoreDataProperties.swift */; };
+		057E6F7329505B8700BA40A6 /* Posts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F6F29505B8700BA40A6 /* Posts+CoreDataClass.swift */; };
+		057E6F7429505B8700BA40A6 /* Posts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F7029505B8700BA40A6 /* Posts+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		050E02DC294C4792005EF95E /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
-		050E02E3294C4B26005EF95E /* TopicList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopicList+CoreDataClass.swift"; sourceTree = "<group>"; };
-		050E02E4294C4B26005EF95E /* TopicList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopicList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		050E02E8294C5A85005EF95E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		050E02EA294C6694005EF95E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		05357195294C459A007307EE /* newTeddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newTeddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,8 +41,11 @@
 		053571A9294C459B007307EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		057E6F4D29502CEE00BA40A6 /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
 		057E6F4F29502D1B00BA40A6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
-		057E6F562950310B00BA40A6 /* Posts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataClass.swift"; sourceTree = "<group>"; };
-		057E6F572950310B00BA40A6 /* Posts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		057E6F5B29504A6900BA40A6 /* postInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postInfoViewController.swift; sourceTree = "<group>"; };
+		057E6F6D29505B8700BA40A6 /* TopicList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TopicList+CoreDataClass.swift"; path = "../../TopicList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		057E6F6E29505B8700BA40A6 /* TopicList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TopicList+CoreDataProperties.swift"; path = "../../TopicList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		057E6F6F29505B8700BA40A6 /* Posts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataClass.swift"; sourceTree = "<group>"; };
+		057E6F7029505B8700BA40A6 /* Posts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,8 @@
 		050E02E7294C4B2F005EF95E /* TopicList */ = {
 			isa = PBXGroup;
 			children = (
-				050E02E3294C4B26005EF95E /* TopicList+CoreDataClass.swift */,
-				050E02E4294C4B26005EF95E /* TopicList+CoreDataProperties.swift */,
+				057E6F6D29505B8700BA40A6 /* TopicList+CoreDataClass.swift */,
+				057E6F6E29505B8700BA40A6 /* TopicList+CoreDataProperties.swift */,
 			);
 			path = TopicList;
 			sourceTree = "<group>";
@@ -94,6 +96,7 @@
 				0535719C294C459A007307EE /* ViewController.swift */,
 				050E02DC294C4792005EF95E /* TopicViewController.swift */,
 				050E02E8294C5A85005EF95E /* TableViewCell.swift */,
+				057E6F5B29504A6900BA40A6 /* postInfoViewController.swift */,
 				057E6F4D29502CEE00BA40A6 /* postViewController.swift */,
 				0535719E294C459A007307EE /* Main.storyboard */,
 				053571A4294C459B007307EE /* Assets.xcassets */,
@@ -107,8 +110,8 @@
 		057E6F5A2950311500BA40A6 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				057E6F562950310B00BA40A6 /* Posts+CoreDataClass.swift */,
-				057E6F572950310B00BA40A6 /* Posts+CoreDataProperties.swift */,
+				057E6F6F29505B8700BA40A6 /* Posts+CoreDataClass.swift */,
+				057E6F7029505B8700BA40A6 /* Posts+CoreDataProperties.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -186,17 +189,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0535719D294C459A007307EE /* ViewController.swift in Sources */,
+				057E6F7329505B8700BA40A6 /* Posts+CoreDataClass.swift in Sources */,
 				050E02DD294C4792005EF95E /* TopicViewController.swift in Sources */,
+				057E6F5C29504A6900BA40A6 /* postInfoViewController.swift in Sources */,
 				050E02E9294C5A85005EF95E /* TableViewCell.swift in Sources */,
+				057E6F7429505B8700BA40A6 /* Posts+CoreDataProperties.swift in Sources */,
 				05357199294C459A007307EE /* AppDelegate.swift in Sources */,
-				050E02E5294C4B26005EF95E /* TopicList+CoreDataClass.swift in Sources */,
 				057E6F4E29502CEE00BA40A6 /* postViewController.swift in Sources */,
+				057E6F7229505B8700BA40A6 /* TopicList+CoreDataProperties.swift in Sources */,
 				053571A3294C459A007307EE /* newTeddit.xcdatamodeld in Sources */,
-				057E6F582950310B00BA40A6 /* Posts+CoreDataClass.swift in Sources */,
+				057E6F7129505B8700BA40A6 /* TopicList+CoreDataClass.swift in Sources */,
 				057E6F5029502D1B00BA40A6 /* PostTableViewCell.swift in Sources */,
-				057E6F592950310B00BA40A6 /* Posts+CoreDataProperties.swift in Sources */,
 				0535719B294C459A007307EE /* SceneDelegate.swift in Sources */,
-				050E02E6294C4B26005EF95E /* TopicList+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

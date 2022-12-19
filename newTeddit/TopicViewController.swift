@@ -17,6 +17,7 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var tableViews: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViews.delegate = self
@@ -24,6 +25,7 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableViews.frame = view.bounds
         getAllItems()
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
@@ -63,7 +65,6 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let newTopic = TopicList(context: context)
         newTopic.topicName = name
         newTopic.createdAt = Date()
-        
         do{
             try context.save()
             getAllItems()

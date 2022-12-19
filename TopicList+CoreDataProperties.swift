@@ -18,6 +18,24 @@ extension TopicList {
 
     @NSManaged public var createdAt: Date?
     @NSManaged public var topicName: String?
+    @NSManaged public var posts: NSSet?
+
+}
+
+// MARK: Generated accessors for posts
+extension TopicList {
+
+    @objc(addPostsObject:)
+    @NSManaged public func addToPosts(_ value: Posts)
+
+    @objc(removePostsObject:)
+    @NSManaged public func removeFromPosts(_ value: Posts)
+
+    @objc(addPosts:)
+    @NSManaged public func addToPosts(_ values: NSSet)
+
+    @objc(removePosts:)
+    @NSManaged public func removeFromPosts(_ values: NSSet)
 
 }
 
