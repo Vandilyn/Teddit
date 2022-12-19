@@ -19,6 +19,10 @@
 		053571A3294C459A007307EE /* newTeddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 053571A1294C459A007307EE /* newTeddit.xcdatamodeld */; };
 		053571A5294C459B007307EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053571A4294C459B007307EE /* Assets.xcassets */; };
 		053571A8294C459B007307EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053571A6294C459B007307EE /* LaunchScreen.storyboard */; };
+		057E6F4E29502CEE00BA40A6 /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F4D29502CEE00BA40A6 /* postViewController.swift */; };
+		057E6F5029502D1B00BA40A6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F4F29502D1B00BA40A6 /* PostTableViewCell.swift */; };
+		057E6F582950310B00BA40A6 /* Posts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F562950310B00BA40A6 /* Posts+CoreDataClass.swift */; };
+		057E6F592950310B00BA40A6 /* Posts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F572950310B00BA40A6 /* Posts+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		053571A4294C459B007307EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		053571A7294C459B007307EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053571A9294C459B007307EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		057E6F4D29502CEE00BA40A6 /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
+		057E6F4F29502D1B00BA40A6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		057E6F562950310B00BA40A6 /* Posts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataClass.swift"; sourceTree = "<group>"; };
+		057E6F572950310B00BA40A6 /* Posts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +86,15 @@
 		05357197294C459A007307EE /* newTeddit */ = {
 			isa = PBXGroup;
 			children = (
+				057E6F5A2950311500BA40A6 /* Posts */,
 				050E02E7294C4B2F005EF95E /* TopicList */,
 				05357198294C459A007307EE /* AppDelegate.swift */,
+				057E6F4F29502D1B00BA40A6 /* PostTableViewCell.swift */,
 				0535719A294C459A007307EE /* SceneDelegate.swift */,
 				0535719C294C459A007307EE /* ViewController.swift */,
 				050E02DC294C4792005EF95E /* TopicViewController.swift */,
 				050E02E8294C5A85005EF95E /* TableViewCell.swift */,
+				057E6F4D29502CEE00BA40A6 /* postViewController.swift */,
 				0535719E294C459A007307EE /* Main.storyboard */,
 				053571A4294C459B007307EE /* Assets.xcassets */,
 				053571A6294C459B007307EE /* LaunchScreen.storyboard */,
@@ -91,6 +102,15 @@
 				053571A1294C459A007307EE /* newTeddit.xcdatamodeld */,
 			);
 			path = newTeddit;
+			sourceTree = "<group>";
+		};
+		057E6F5A2950311500BA40A6 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				057E6F562950310B00BA40A6 /* Posts+CoreDataClass.swift */,
+				057E6F572950310B00BA40A6 /* Posts+CoreDataProperties.swift */,
+			);
+			path = Posts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +190,11 @@
 				050E02E9294C5A85005EF95E /* TableViewCell.swift in Sources */,
 				05357199294C459A007307EE /* AppDelegate.swift in Sources */,
 				050E02E5294C4B26005EF95E /* TopicList+CoreDataClass.swift in Sources */,
+				057E6F4E29502CEE00BA40A6 /* postViewController.swift in Sources */,
 				053571A3294C459A007307EE /* newTeddit.xcdatamodeld in Sources */,
+				057E6F582950310B00BA40A6 /* Posts+CoreDataClass.swift in Sources */,
+				057E6F5029502D1B00BA40A6 /* PostTableViewCell.swift in Sources */,
+				057E6F592950310B00BA40A6 /* Posts+CoreDataProperties.swift in Sources */,
 				0535719B294C459A007307EE /* SceneDelegate.swift in Sources */,
 				050E02E6294C4B26005EF95E /* TopicList+CoreDataProperties.swift in Sources */,
 			);

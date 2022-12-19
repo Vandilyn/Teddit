@@ -1,27 +1,26 @@
 //
-//  TopicViewController.swift
+//  postViewController.swift
 //  newTeddit
 //
-//  Created by prk on 12/15/22.
+//  Created by prk on 18/12/22.
 //
 
 import UIKit
 import CoreData
 
-class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class postViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    private var models = [TopicList]()
-
-    @IBOutlet weak var tableViews: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var models = [Posts]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViews.delegate = self
-        tableViews.dataSource = self
-        tableViews.frame = view.bounds
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
         getAllItems()
     }
     
@@ -31,39 +30,39 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        cell.judul.text = model.topicName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostTableViewCell
+        cell.judulPost.text = model.judul
+        cell.authorName.text = model.author
         return cell
     }
     
     @IBAction func addOnTap(_ sender: Any) {
         let alert = UIAlertController(
-            title: "New topic", message: "Enter topic name", preferredStyle: .alert
+            title: "New Post", message: "Enter post title", preferredStyle: .alert
         )
         alert.addTextField(configurationHandler: nil)
         alert.addAction(UIAlertAction(title: "Submit", style: .cancel,handler: {[weak self]_ in guard
             let field = alert.textFields?.first, let text = field.text, !text.isEmpty else {
             return
         }
-            self?.createTopic(name: text)
+            self?.createPost(name: text)
         }))
         present(alert, animated: true)
     }
     
     func getAllItems(){
         do{
-            models = try context.fetch(TopicList.fetchRequest())
-            tableViews.reloadData()
+            models = try context.fetch(Posts.fetchRequest())
+            tableView.reloadData()
         }catch{
             //error
         }
     }
     
-    func createTopic(name: String){
-        let newTopic = TopicList(context: context)
-        newTopic.topicName = name
-        newTopic.createdAt = Date()
-        
+    func createPost(name: String){
+        let newPost = Posts(context: context)
+        newPost.judul = name
+        newPost.author = "ANON"
         do{
             try context.save()
             getAllItems()
@@ -71,5 +70,4 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
             //error
         }
     }
-
 }
