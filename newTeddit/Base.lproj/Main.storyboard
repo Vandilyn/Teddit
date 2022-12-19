@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HB8-kw-nah">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h1l-rT-RNo">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -299,9 +299,99 @@
             </objects>
             <point key="canvasLocation" x="33" y="-706"/>
         </scene>
+        <!--Post View Controller-->
+        <scene sceneID="Ha9-4W-Oy9">
+            <objects>
+                <viewController id="h1l-rT-RNo" customClass="postViewController" customModule="newTeddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3b1-3a-wfp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POSTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xb-l7-rml">
+                                <rect key="frame" x="20" y="79" width="92" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EBo-R9-oe5">
+                                <rect key="frame" x="20" y="123.33333333333331" width="353" height="694.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="117" id="TNh-ex-Ngj" customClass="PostTableViewCell" customModule="newTeddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="353" height="117"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TNh-ex-Ngj" id="9z9-U6-YDF">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLV-j0-Yd3">
+                                                    <rect key="frame" x="20" y="42" width="96" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUDUL POST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nP-FN-1cJ">
+                                                    <rect key="frame" x="20" y="11" width="129" height="26"/>
+                                                    <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0nP-FN-1cJ" firstAttribute="top" secondItem="9z9-U6-YDF" secondAttribute="topMargin" id="79d-Jc-68y"/>
+                                                <constraint firstItem="0nP-FN-1cJ" firstAttribute="leading" secondItem="9z9-U6-YDF" secondAttribute="leadingMargin" id="WdY-FS-Z2O"/>
+                                                <constraint firstItem="mLV-j0-Yd3" firstAttribute="top" secondItem="0nP-FN-1cJ" secondAttribute="bottom" constant="5" id="jZf-VX-mGk"/>
+                                                <constraint firstItem="mLV-j0-Yd3" firstAttribute="leading" secondItem="9z9-U6-YDF" secondAttribute="leadingMargin" id="kqf-yf-Ffu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorName" destination="mLV-j0-Yd3" id="jVc-kx-VS3"/>
+                                            <outlet property="judulPost" destination="0nP-FN-1cJ" id="hDa-1e-GOW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDk-Hq-0vS">
+                                <rect key="frame" x="323" y="79" width="50" height="34.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="f7B-LX-j91"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="+">
+                                    <color key="baseBackgroundColor" red="0.97585338349999995" green="0.26994761820000002" blue="0.0018616011369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addOnTap:" destination="sVP-Id-ffY" eventType="touchUpInside" id="AU1-Bc-lJD"/>
+                                    <action selector="addOnTap:" destination="h1l-rT-RNo" eventType="touchUpInside" id="Wpt-Ib-M4i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sqi-z7-VGL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sqi-z7-VGL" firstAttribute="trailing" secondItem="DDk-Hq-0vS" secondAttribute="trailing" constant="20" id="0Pw-5C-VpP"/>
+                            <constraint firstItem="sqi-z7-VGL" firstAttribute="trailing" secondItem="EBo-R9-oe5" secondAttribute="trailing" constant="20" id="7sO-T6-tnc"/>
+                            <constraint firstItem="5Xb-l7-rml" firstAttribute="top" secondItem="sqi-z7-VGL" secondAttribute="top" constant="20" id="FEX-5z-s6w"/>
+                            <constraint firstItem="DDk-Hq-0vS" firstAttribute="top" secondItem="sqi-z7-VGL" secondAttribute="top" constant="20" id="Sph-ea-QR7"/>
+                            <constraint firstItem="EBo-R9-oe5" firstAttribute="top" secondItem="DDk-Hq-0vS" secondAttribute="bottom" constant="10" id="TeC-Ys-owx"/>
+                            <constraint firstItem="EBo-R9-oe5" firstAttribute="leading" secondItem="sqi-z7-VGL" secondAttribute="leading" constant="20" id="kxo-6f-lUw"/>
+                            <constraint firstItem="5Xb-l7-rml" firstAttribute="leading" secondItem="sqi-z7-VGL" secondAttribute="leading" constant="20" id="y2F-kY-EIJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="EBo-R9-oe5" id="S5Z-Nr-exC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cV7-Qr-PZi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812.97709923664115" y="-712.67605633802816"/>
+        </scene>
     </scenes>
     <resources>
         <image name="teddit" width="512" height="512"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
