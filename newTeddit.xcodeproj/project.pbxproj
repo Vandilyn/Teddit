@@ -19,7 +19,6 @@
 		053571A3294C459A007307EE /* newTeddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 053571A1294C459A007307EE /* newTeddit.xcdatamodeld */; };
 		053571A5294C459B007307EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053571A4294C459B007307EE /* Assets.xcassets */; };
 		053571A8294C459B007307EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053571A6294C459B007307EE /* LaunchScreen.storyboard */; };
-		053571B0294C45FD007307EE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053571AF294C45FD007307EE /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 		053571A4294C459B007307EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		053571A7294C459B007307EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053571A9294C459B007307EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		053571AF294C45FD007307EE /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../TEDDIT/TEDDIT/RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 				05357198294C459A007307EE /* AppDelegate.swift */,
 				0535719A294C459A007307EE /* SceneDelegate.swift */,
 				0535719C294C459A007307EE /* ViewController.swift */,
-				053571AF294C45FD007307EE /* RegisterViewController.swift */,
 				050E02DC294C4792005EF95E /* TopicViewController.swift */,
 				050E02E8294C5A85005EF95E /* TableViewCell.swift */,
 				0535719E294C459A007307EE /* Main.storyboard */,
@@ -169,7 +166,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0535719D294C459A007307EE /* ViewController.swift in Sources */,
-				053571B0294C45FD007307EE /* RegisterViewController.swift in Sources */,
 				050E02DD294C4792005EF95E /* TopicViewController.swift in Sources */,
 				050E02E9294C5A85005EF95E /* TableViewCell.swift in Sources */,
 				05357199294C459A007307EE /* AppDelegate.swift in Sources */,
