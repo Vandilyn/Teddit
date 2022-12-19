@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h1l-rT-RNo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HB8-kw-nah">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="AG9-5c-Ski">
             <objects>
-                <viewController id="HB8-kw-nah" customClass="ViewController" customModule="newTeddit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="HB8-kw-nah" customClass="ViewController" customModule="newTeddit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tmj-m5-rO2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="hlh-q3-IS3" kind="show" id="nzq-ee-hYC"/>
+                                    <segue destination="hlh-q3-IS3" kind="show" identifier="UnwindSegue" id="nzq-ee-hYC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gk-Pt-bDi">
@@ -95,8 +95,9 @@
                             <constraint firstItem="iot-Pj-Chq" firstAttribute="leading" secondItem="av4-Rp-9dB" secondAttribute="leading" constant="76" id="x8x-SC-Qio"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3QB-Hg-k0f"/>
                     <connections>
-                        <outlet property="emailSignInTxtfield" destination="scC-uV-rHH" id="0OM-Sh-I3t"/>
+                        <outlet property="emailSignInTxtField" destination="scC-uV-rHH" id="0OM-Sh-I3t"/>
                         <outlet property="passwordSignInTxtField" destination="XtK-MY-dJh" id="Mie-yz-BMR"/>
                         <segue destination="sVP-Id-ffY" kind="show" identifier="goToTopic" id="5b4-y5-3nY"/>
                     </connections>
@@ -151,9 +152,6 @@
                                 <rect key="frame" x="247" y="559" width="76" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
-                                <connections>
-                                    <segue destination="OyZ-vW-5Ah" kind="unwind" unwindAction="unwindToMain:" id="qaO-3J-pzC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEu-8G-gyd">
                                 <rect key="frame" x="113" y="500" width="167" height="35"/>
@@ -165,6 +163,10 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up">
                                     <color key="baseBackgroundColor" red="0.97585338349999995" green="0.26994761820000002" blue="0.0018616011369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="signUpBtn:" destination="hlh-q3-IS3" eventType="touchUpInside" id="QWM-yS-rCh"/>
+                                    <segue destination="HB8-kw-nah" kind="show" id="iVI-4T-KF9"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-5u-adl">
                                 <rect key="frame" x="29" y="438" width="337" height="34"/>
@@ -205,6 +207,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="18m-Zl-vp2"/>
+                    <connections>
+                        <outlet property="emailSignUpTxtField" destination="gbm-5u-adl" id="cIZ-zU-GkS"/>
+                        <outlet property="passwordSignUpTxtField" destination="gbm-5u-adl" id="VdM-xd-pHh"/>
+                        <outlet property="userTxtField" destination="645-4h-kj4" id="L04-8Y-fAr"/>
+                        <segue destination="OyZ-vW-5Ah" kind="unwind" unwindAction="unwindToMain:" id="pnk-76-oIL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jq4-C5-nEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="OyZ-vW-5Ah" userLabel="Exit" sceneMemberID="exit"/>

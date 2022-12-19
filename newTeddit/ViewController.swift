@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    @IBOutlet weak var emailSignInTxtfield: UITextField!
+    @IBOutlet weak var emailSignInTxtField: UITextField!
     @IBOutlet weak var passwordSignInTxtField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
        
     }
     @IBAction func signInBtn(_ sender: Any) {
-        let emailSignIn = emailSignInTxtfield.text!
+        let emailSignIn = emailSignInTxtField.text!
         let passwordSignIn = passwordSignInTxtField.text!
 
         if (!emailValidation(emailSignIn)){
