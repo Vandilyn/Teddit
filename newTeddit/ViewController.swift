@@ -9,18 +9,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var userList = [User]()
+    var username = ""
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var emailSignInTxtfield: UITextField!
     @IBOutlet weak var passwordSignInTxtField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loadData()
+    }
+    
+    func loadData(){
+        do{
+            userList = try context.fetch(User.fetchRequest())
+        }catch{
+            //hiya
+        }
+        
     }
     
     @IBAction func unwindToMain(_ unwindSegue: UIStoryboardSegue) {
        
     }
     @IBAction func signInBtn(_ sender: Any) {
+        var flag = 0
         let emailSignIn = emailSignInTxtfield.text!
         let passwordSignIn = passwordSignInTxtField.text!
 
@@ -39,9 +53,26 @@ class ViewController: UIViewController {
             }
         }
         else {
-            performSegue(withIdentifier: "goToTopic", sender: self)
+            for data in userList{
+                if(emailSignIn == data.email && passwordSignIn == data.password){
+                    flag = 1
+                    username = data.username!
+                }
+            }
+            if(flag == 1){
+                performSegue(withIdentifier: "goToTopic", sender: self)
+                
+            }else{
+                print("Salah bego")
+            }
         }
-
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as? TopicViewController
+        if(segue.identifier == "goToTopic"){
+            dest?.username = username
+        }
     }
     
     func emailValidation(_ email: String) -> Bool {

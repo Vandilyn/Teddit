@@ -10,6 +10,9 @@
 		050E02DD294C4792005EF95E /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E02DC294C4792005EF95E /* TopicViewController.swift */; };
 		050E02E9294C5A85005EF95E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E02E8294C5A85005EF95E /* TableViewCell.swift */; };
 		050E02EB294C6694005EF95E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 050E02EA294C6694005EF95E /* .gitignore */; };
+		0534EB522952D86400F91F58 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0534EB502952D86400F91F58 /* User+CoreDataClass.swift */; };
+		0534EB532952D86400F91F58 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0534EB512952D86400F91F58 /* User+CoreDataProperties.swift */; };
+		0534EB582952D94300F91F58 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0534EB572952D94300F91F58 /* SignUpViewController.swift */; };
 		05357199294C459A007307EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05357198294C459A007307EE /* AppDelegate.swift */; };
 		0535719B294C459A007307EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0535719A294C459A007307EE /* SceneDelegate.swift */; };
 		0535719D294C459A007307EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0535719C294C459A007307EE /* ViewController.swift */; };
@@ -30,6 +33,9 @@
 		050E02DC294C4792005EF95E /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
 		050E02E8294C5A85005EF95E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		050E02EA294C6694005EF95E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0534EB502952D86400F91F58 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0534EB512952D86400F91F58 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0534EB572952D94300F91F58 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
 		05357195294C459A007307EE /* newTeddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newTeddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05357198294C459A007307EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0535719A294C459A007307EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +74,15 @@
 			path = TopicList;
 			sourceTree = "<group>";
 		};
+		0534EB542952D86B00F91F58 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0534EB502952D86400F91F58 /* User+CoreDataClass.swift */,
+				0534EB512952D86400F91F58 /* User+CoreDataProperties.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		0535718C294C459A007307EE = {
 			isa = PBXGroup;
 			children = (
@@ -90,10 +105,12 @@
 			children = (
 				057E6F5A2950311500BA40A6 /* Posts */,
 				050E02E7294C4B2F005EF95E /* TopicList */,
+				0534EB542952D86B00F91F58 /* User */,
 				05357198294C459A007307EE /* AppDelegate.swift */,
 				057E6F4F29502D1B00BA40A6 /* PostTableViewCell.swift */,
 				0535719A294C459A007307EE /* SceneDelegate.swift */,
 				0535719C294C459A007307EE /* ViewController.swift */,
+				0534EB572952D94300F91F58 /* SignUpViewController.swift */,
 				050E02DC294C4792005EF95E /* TopicViewController.swift */,
 				050E02E8294C5A85005EF95E /* TableViewCell.swift */,
 				057E6F5B29504A6900BA40A6 /* postInfoViewController.swift */,
@@ -194,8 +211,11 @@
 				057E6F5C29504A6900BA40A6 /* postInfoViewController.swift in Sources */,
 				050E02E9294C5A85005EF95E /* TableViewCell.swift in Sources */,
 				057E6F7429505B8700BA40A6 /* Posts+CoreDataProperties.swift in Sources */,
+				0534EB522952D86400F91F58 /* User+CoreDataClass.swift in Sources */,
 				05357199294C459A007307EE /* AppDelegate.swift in Sources */,
+				0534EB532952D86400F91F58 /* User+CoreDataProperties.swift in Sources */,
 				057E6F4E29502CEE00BA40A6 /* postViewController.swift in Sources */,
+				0534EB582952D94300F91F58 /* SignUpViewController.swift in Sources */,
 				057E6F7229505B8700BA40A6 /* TopicList+CoreDataProperties.swift in Sources */,
 				053571A3294C459A007307EE /* newTeddit.xcdatamodeld in Sources */,
 				057E6F7129505B8700BA40A6 /* TopicList+CoreDataClass.swift in Sources */,

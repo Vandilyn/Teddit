@@ -10,6 +10,9 @@ import CoreData
 
 class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var userText: UILabel!
+    
+    var username = ""
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -23,6 +26,8 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableViews.delegate = self
         tableViews.dataSource = self
         tableViews.frame = view.bounds
+        print("HIyA: \(username)")
+        userText.text = username
         getAllItems()
     }
 
