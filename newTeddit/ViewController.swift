@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         let passwordSignIn = passwordSignInTxtField.text!
 
         if (!emailValidation(emailSignIn)){
-            let alert = UIAlertController(title: "Error", message: "Email is not registered!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "Email invalid!", preferredStyle: .alert)
             present(alert, animated: true)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
                 alert.dismiss(animated: true,completion:nil)
@@ -63,7 +63,11 @@ class ViewController: UIViewController {
                 performSegue(withIdentifier: "goToTopic", sender: self)
                 
             }else{
-                print("Salah bego")
+                let alert = UIAlertController(title: "Error", message: "Email is not Registered!", preferredStyle: .alert)
+                present(alert, animated: true)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
+                    alert.dismiss(animated: true,completion:nil)
+                }
             }
         }
     }

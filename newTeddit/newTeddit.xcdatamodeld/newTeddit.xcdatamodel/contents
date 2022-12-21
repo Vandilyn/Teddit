@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Posts" representedClassName="Posts" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="judul" optional="YES" attributeType="String"/>
         <relationship name="topic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TopicList" inverseName="posts" inverseEntity="TopicList"/>
     </entity>

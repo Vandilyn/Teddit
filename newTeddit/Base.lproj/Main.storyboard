@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="AG9-5c-Ski">
             <objects>
-                <viewController id="HB8-kw-nah" customClass="ViewController" customModule="newTeddit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="HB8-kw-nah" customClass="ViewController" customModule="newTeddit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tmj-m5-rO2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XtK-MY-dJh">
                                 <rect key="frame" x="28" y="409" width="336" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si9-fK-JqL">
                                 <rect key="frame" x="60" y="523" width="179" height="21"/>
@@ -95,6 +95,7 @@
                             <constraint firstItem="iot-Pj-Chq" firstAttribute="leading" secondItem="av4-Rp-9dB" secondAttribute="leading" constant="76" id="x8x-SC-Qio"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="B6q-ak-OMn"/>
                     <connections>
                         <outlet property="emailSignInTxtfield" destination="scC-uV-rHH" id="0OM-Sh-I3t"/>
                         <outlet property="passwordSignInTxtField" destination="XtK-MY-dJh" id="Mie-yz-BMR"/>
@@ -151,9 +152,6 @@
                                 <rect key="frame" x="247" y="559" width="76" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
-                                <connections>
-                                    <segue destination="OyZ-vW-5Ah" kind="unwind" unwindAction="unwindToMain:" id="qaO-3J-pzC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEu-8G-gyd">
                                 <rect key="frame" x="113" y="500" width="167" height="35"/>
@@ -213,12 +211,13 @@
                         <outlet property="password" destination="gbm-5u-adl" id="oAu-0C-eob"/>
                         <outlet property="username" destination="jWw-Nz-i7s" id="9FT-aA-0P8"/>
                         <segue destination="OyZ-vW-5Ah" kind="unwind" unwindAction="unwindToMain:" id="aFu-H6-vwk"/>
+                        <segue destination="HB8-kw-nah" kind="show" identifier="balik" id="wmE-oT-eMB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jq4-C5-nEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="OyZ-vW-5Ah" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="783.96946564885491" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="989" y="1"/>
         </scene>
         <!--Topic View Controller-->
         <scene sceneID="BVL-cg-7A7">
@@ -518,11 +517,11 @@
         <!--Navigation Controller-->
         <scene sceneID="MzH-8p-CbK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yku-9F-DzI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="yku-9F-DzI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="vYf-16-S5y"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5VW-lq-nW9">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
