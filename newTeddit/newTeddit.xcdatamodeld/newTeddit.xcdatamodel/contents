@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Posts" representedClassName="Posts" syncable="YES">
+    <entity name="Post" representedClassName="Post" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="judul" optional="YES" attributeType="String"/>
-        <relationship name="topic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TopicList" inverseName="posts" inverseEntity="TopicList"/>
+        <relationship name="topics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" inverseName="posts" inverseEntity="Topic"/>
     </entity>
-    <entity name="TopicList" representedClassName="TopicList" syncable="YES">
-        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="topicName" optional="YES" attributeType="String"/>
-        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Posts" inverseName="topic" inverseEntity="Posts"/>
+    <entity name="Topic" representedClassName="Topic" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="topics" inverseEntity="Post"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>

@@ -13,8 +13,9 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var tableView: UITableView!
-    
-    private var models = [Posts]()
+   
+    private var models = [Post]()
+    var topic: Topic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    
     @IBAction func addOnTap(_ sender: Any) {
         let alert = UIAlertController(
             title: "New Post", message: "Enter post title", preferredStyle: .alert
@@ -51,19 +53,15 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func getAllItems(){
-        do{
-            models = try context.fetch(Posts.fetchRequest())
-            tableView.reloadData()
-        }catch{
-            //error
-        }
+        models = topic!.posts!.allObjects as! [Post]
+        tableView.reloadData()
     }
     
     func createPost(name: String){
-        let newPost = Posts(context: context)
+        let newPost = Post(context: context)
         newPost.judul = name
         newPost.author = "ANON"
-//        newPost.topic =
+        topic?.addToPosts(newPost)
         do{
             try context.save()
             getAllItems()

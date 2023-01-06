@@ -20,13 +20,13 @@
 		053571A3294C459A007307EE /* newTeddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 053571A1294C459A007307EE /* newTeddit.xcdatamodeld */; };
 		053571A5294C459B007307EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053571A4294C459B007307EE /* Assets.xcassets */; };
 		053571A8294C459B007307EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053571A6294C459B007307EE /* LaunchScreen.storyboard */; };
+		0563159D29681487008D9C0A /* Topic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563159B29681487008D9C0A /* Topic+CoreDataClass.swift */; };
+		0563159E29681487008D9C0A /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563159C29681487008D9C0A /* Topic+CoreDataProperties.swift */; };
+		056315A129681821008D9C0A /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563159F29681821008D9C0A /* Post+CoreDataClass.swift */; };
+		056315A229681821008D9C0A /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056315A029681821008D9C0A /* Post+CoreDataProperties.swift */; };
 		057E6F4E29502CEE00BA40A6 /* postViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F4D29502CEE00BA40A6 /* postViewController.swift */; };
 		057E6F5029502D1B00BA40A6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F4F29502D1B00BA40A6 /* PostTableViewCell.swift */; };
 		057E6F5C29504A6900BA40A6 /* postInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F5B29504A6900BA40A6 /* postInfoViewController.swift */; };
-		057E6F7129505B8700BA40A6 /* TopicList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F6D29505B8700BA40A6 /* TopicList+CoreDataClass.swift */; };
-		057E6F7229505B8700BA40A6 /* TopicList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F6E29505B8700BA40A6 /* TopicList+CoreDataProperties.swift */; };
-		057E6F7329505B8700BA40A6 /* Posts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F6F29505B8700BA40A6 /* Posts+CoreDataClass.swift */; };
-		057E6F7429505B8700BA40A6 /* Posts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E6F7029505B8700BA40A6 /* Posts+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,13 +45,13 @@
 		053571A4294C459B007307EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		053571A7294C459B007307EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053571A9294C459B007307EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0563159B29681487008D9C0A /* Topic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0563159C29681487008D9C0A /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0563159F29681821008D9C0A /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
+		056315A029681821008D9C0A /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		057E6F4D29502CEE00BA40A6 /* postViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postViewController.swift; sourceTree = "<group>"; };
 		057E6F4F29502D1B00BA40A6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		057E6F5B29504A6900BA40A6 /* postInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postInfoViewController.swift; sourceTree = "<group>"; };
-		057E6F6D29505B8700BA40A6 /* TopicList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TopicList+CoreDataClass.swift"; path = "../../TopicList+CoreDataClass.swift"; sourceTree = "<group>"; };
-		057E6F6E29505B8700BA40A6 /* TopicList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TopicList+CoreDataProperties.swift"; path = "../../TopicList+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		057E6F6F29505B8700BA40A6 /* Posts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataClass.swift"; sourceTree = "<group>"; };
-		057E6F7029505B8700BA40A6 /* Posts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Posts+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +68,8 @@
 		050E02E7294C4B2F005EF95E /* TopicList */ = {
 			isa = PBXGroup;
 			children = (
-				057E6F6D29505B8700BA40A6 /* TopicList+CoreDataClass.swift */,
-				057E6F6E29505B8700BA40A6 /* TopicList+CoreDataProperties.swift */,
+				0563159B29681487008D9C0A /* Topic+CoreDataClass.swift */,
+				0563159C29681487008D9C0A /* Topic+CoreDataProperties.swift */,
 			);
 			path = TopicList;
 			sourceTree = "<group>";
@@ -127,8 +127,8 @@
 		057E6F5A2950311500BA40A6 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				057E6F6F29505B8700BA40A6 /* Posts+CoreDataClass.swift */,
-				057E6F7029505B8700BA40A6 /* Posts+CoreDataProperties.swift */,
+				0563159F29681821008D9C0A /* Post+CoreDataClass.swift */,
+				056315A029681821008D9C0A /* Post+CoreDataProperties.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -165,6 +165,7 @@
 				TargetAttributes = {
 					05357194294C459A007307EE = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 				};
 			};
@@ -206,19 +207,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0535719D294C459A007307EE /* ViewController.swift in Sources */,
-				057E6F7329505B8700BA40A6 /* Posts+CoreDataClass.swift in Sources */,
 				050E02DD294C4792005EF95E /* TopicViewController.swift in Sources */,
+				0563159E29681487008D9C0A /* Topic+CoreDataProperties.swift in Sources */,
 				057E6F5C29504A6900BA40A6 /* postInfoViewController.swift in Sources */,
 				050E02E9294C5A85005EF95E /* TableViewCell.swift in Sources */,
-				057E6F7429505B8700BA40A6 /* Posts+CoreDataProperties.swift in Sources */,
 				0534EB522952D86400F91F58 /* User+CoreDataClass.swift in Sources */,
 				05357199294C459A007307EE /* AppDelegate.swift in Sources */,
+				056315A129681821008D9C0A /* Post+CoreDataClass.swift in Sources */,
 				0534EB532952D86400F91F58 /* User+CoreDataProperties.swift in Sources */,
+				056315A229681821008D9C0A /* Post+CoreDataProperties.swift in Sources */,
+				0563159D29681487008D9C0A /* Topic+CoreDataClass.swift in Sources */,
 				057E6F4E29502CEE00BA40A6 /* postViewController.swift in Sources */,
 				0534EB582952D94300F91F58 /* SignUpViewController.swift in Sources */,
-				057E6F7229505B8700BA40A6 /* TopicList+CoreDataProperties.swift in Sources */,
 				053571A3294C459A007307EE /* newTeddit.xcdatamodeld in Sources */,
-				057E6F7129505B8700BA40A6 /* TopicList+CoreDataClass.swift in Sources */,
 				057E6F5029502D1B00BA40A6 /* PostTableViewCell.swift in Sources */,
 				0535719B294C459A007307EE /* SceneDelegate.swift in Sources */,
 			);
@@ -365,6 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -382,6 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.newTeddit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -392,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

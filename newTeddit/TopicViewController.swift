@@ -16,9 +16,10 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    private var models = [TopicList]()
+    private var models = [Topic]()
 
     @IBOutlet weak var tableViews: UITableView!
+    static var curr = 0
     
     
     override func viewDidLoad() {
@@ -39,9 +40,20 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        cell.judul.text = model.topicName
+        cell.judul.text = model.name
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        TopicViewController.curr =  indexPath.row
+        performSegue(withIdentifier: "toPost", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! postViewController
+        dest.topic = models[TopicViewController.curr]
+    }
+    
     
     @IBAction func addOnTap(_ sender: Any) {
         let alert = UIAlertController(
@@ -59,7 +71,7 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func getAllItems(){
         do{
-            models = try context.fetch(TopicList.fetchRequest())
+            models = try context.fetch(Topic.fetchRequest())
             tableViews.reloadData()
         }catch{
             //error
@@ -67,9 +79,9 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func createTopic(name: String){
-        let newTopic = TopicList(context: context)
-        newTopic.topicName = name
-        newTopic.createdAt = Date()
+        let newTopic = Topic(context: context)
+        newTopic.name = name
+        newTopic.dateCreated = Date()
         do{
             try context.save()
             getAllItems()

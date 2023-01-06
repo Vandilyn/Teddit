@@ -34,38 +34,38 @@ class ViewController: UIViewController {
        
     }
     @IBAction func signInBtn(_ sender: Any) {
-        var flag = 0
-        let emailSignIn = emailSignInTxtfield.text!
-        let passwordSignIn = passwordSignInTxtField.text!
-
-        if (!emailValidation(emailSignIn)){
-            let alert = UIAlertController(title: "Error", message: "Email is not registered!", preferredStyle: .alert)
-            present(alert, animated: true)
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
-                alert.dismiss(animated: true,completion:nil)
-            }
-        }
-        else if (!passwordValidation(passwordSignIn)){
-            let alert = UIAlertController(title: "Error", message: "Password invalid!", preferredStyle: .alert)
-            present(alert, animated: true)
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
-                alert.dismiss(animated: true,completion:nil)
-            }
-        }
-        else {
-            for data in userList{
-                if(emailSignIn == data.email && passwordSignIn == data.password){
-                    flag = 1
-                    username = data.username!
-                }
-            }
-            if(flag == 1){
+//        var flag = 0
+//        let emailSignIn = emailSignInTxtfield.text!
+//        let passwordSignIn = passwordSignInTxtField.text!
+//
+//        if (!emailValidation(emailSignIn)){
+//            let alert = UIAlertController(title: "Error", message: "Email is not registered!", preferredStyle: .alert)
+//            present(alert, animated: true)
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
+//                alert.dismiss(animated: true,completion:nil)
+//            }
+//        }
+//        else if (!passwordValidation(passwordSignIn)){
+//            let alert = UIAlertController(title: "Error", message: "Password invalid!", preferredStyle: .alert)
+//            present(alert, animated: true)
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
+//                alert.dismiss(animated: true,completion:nil)
+//            }
+//        }
+//        else {
+//            for data in userList{
+//                if(emailSignIn == data.email && passwordSignIn == data.password){
+//                    flag = 1
+//                    username = data.username!
+//                }
+//            }
+//            if(flag == 1){
                 performSegue(withIdentifier: "goToTopic", sender: self)
                 
-            }else{
-                print("Salah bego")
-            }
-        }
+//            }else{
+//                print("Salah bego")
+//            }
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

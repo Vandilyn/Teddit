@@ -278,7 +278,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="judul" destination="98j-P8-eF2" id="3vn-3o-z3N"/>
-                                            <segue destination="h1l-rT-RNo" kind="show" id="NBo-bc-04Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -312,6 +311,7 @@
                     <connections>
                         <outlet property="tableViews" destination="ccj-mL-nOh" id="hmg-AL-Mr9"/>
                         <outlet property="userText" destination="iEC-9X-fRR" id="ZDU-eF-Hlx"/>
+                        <segue destination="h1l-rT-RNo" kind="show" identifier="toPost" id="cGY-yR-JuY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD4-f5-0Ud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
