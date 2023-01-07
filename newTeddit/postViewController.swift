@@ -16,6 +16,7 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
    
     private var models = [Post]()
     var topic: Topic?
+    var curr = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +38,45 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        curr  = indexPath.row
+        performSegue(withIdentifier: "detailSection", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! CommentViewController
+        dest.author = models[curr].author!
+        dest.judul = models[curr].judul!
+        dest.content = models[curr].content!
+        dest.posts = models[curr]
+    }
     
     @IBAction func addOnTap(_ sender: Any) {
         let alert = UIAlertController(
-            title: "New Post", message: "Enter post title", preferredStyle: .alert
+            title: "New Post", message: "Post detail", preferredStyle: .alert
         )
-        alert.addTextField(configurationHandler: nil)
-        alert.addAction(UIAlertAction(title: "Submit", style: .cancel,handler: {[weak self]_ in guard
-            let field = alert.textFields?.first, let text = field.text, !text.isEmpty else {
+        alert.addTextField{ field in
+            field.placeholder = "Post Title"
+            field.returnKeyType = .next
+        }
+        
+        alert.addTextField{ field in
+            field.placeholder = "Post content"
+            field.returnKeyType = .continue
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: {[weak self]_ in
+            guard let fields = alert.textFields, fields.count == 2 else {
             return
         }
-            self?.createPost(name: text)
+            let postTitle = fields[0]
+            let postContent = fields[1]
+            guard let title = postTitle.text, !title.isEmpty,
+                  let content = postContent.text, !content.isEmpty else{
+                print("Error")
+                return
+            }
+            self?.createPost(name: title, content: content)
         }))
         present(alert, animated: true)
     }
@@ -57,10 +86,11 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
-    func createPost(name: String){
+    func createPost(name: String, content: String){
         let newPost = Post(context: context)
         newPost.judul = name
         newPost.author = "ANON"
+        newPost.content = content
         topic?.addToPosts(newPost)
         do{
             try context.save()
@@ -69,4 +99,5 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
             //error
         }
     }
+    
 }

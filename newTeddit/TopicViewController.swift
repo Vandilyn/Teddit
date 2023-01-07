@@ -27,11 +27,16 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableViews.delegate = self
         tableViews.dataSource = self
         tableViews.frame = view.bounds
-        print("HIyA: \(username)")
-        userText.text = username
+        userText.text = "username"
+        let tap = UITapGestureRecognizer(target: self, action: #selector(TopicViewController.tapFunction))
+        userText.isUserInteractionEnabled = true
+        userText.addGestureRecognizer(tap)
         getAllItems()
     }
-
+    
+    @objc func tapFunction(){
+        performSegue(withIdentifier: "profile", sender: self)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
@@ -50,8 +55,10 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! postViewController
-        dest.topic = models[TopicViewController.curr]
+        if(segue.identifier == "toPost"){
+            let dest = segue.destination as! postViewController
+            dest.topic = models[TopicViewController.curr]
+        }
     }
     
     
