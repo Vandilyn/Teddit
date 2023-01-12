@@ -24,13 +24,20 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userText.text = username
+        print("Username: \(username)")
         tableViews.delegate = self
         tableViews.dataSource = self
         tableViews.frame = view.bounds
-        userText.text = "username"
+        userText.text = username
         let tap = UITapGestureRecognizer(target: self, action: #selector(TopicViewController.tapFunction))
         userText.isUserInteractionEnabled = true
         userText.addGestureRecognizer(tap)
+        getAllItems()
+        print("Username2: \(username)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         getAllItems()
     }
     
@@ -59,6 +66,10 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let dest = segue.destination as! postViewController
             dest.topic = models[TopicViewController.curr]
         }
+        if(segue.identifier == "profile"){
+            let dest = segue.destination as! ProfileViewController
+            dest.username = userText.text!
+        }
     }
     
     
@@ -80,6 +91,7 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         do{
             models = try context.fetch(Topic.fetchRequest())
             tableViews.reloadData()
+            userText.text = username
         }catch{
             //error
         }

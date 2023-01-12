@@ -18,17 +18,29 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    
 
     @IBAction func onRegister(_ sender: Any) {
         validation()
-        saveData()
         print("Berhasil berhasil berhasil hore we did it...")
         
     }
     
     func validation(){
-        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        if(username.text?.isEmpty == true){
+            alert.message = "Username is empty!"
+        }else if(email.text?.isEmpty == true){
+            alert.message = "Email is empty!"
+        }else if(password.text?.isEmpty == true){
+            alert.message = "Password is empty!"
+        }else{
+            alert.message = "Account berhasil dibuat!"
+            saveData()
+        }
+        present(alert, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
+            alert.dismiss(animated: true,completion:nil)
+        }
     }
     
     func saveData(){
