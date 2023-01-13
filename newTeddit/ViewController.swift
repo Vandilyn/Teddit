@@ -10,13 +10,15 @@ import UIKit
 class ViewController: UIViewController {
 
     var userList = [User]()
-    var username = "ini user"
     static var currUser = 0
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var emailSignInTxtfield: UITextField!
     @IBOutlet weak var passwordSignInTxtField: UITextField!
+    
+    static var email = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
        
     }
     @IBAction func signInBtn(_ sender: Any) {
+        //flag harusnya 0
         var flag = 0
         let emailSignIn = emailSignInTxtfield.text!
         let passwordSignIn = passwordSignInTxtField.text!
@@ -58,7 +61,8 @@ class ViewController: UIViewController {
                 if(emailSignIn == data.email && passwordSignIn == data.password){
                     flag = 1
                     ViewController.currUser = index
-                    username = data.username!
+                    ViewController.email = emailSignIn
+                    print("user ditemukan")
                     break
                 }else{
                     print("Error")
@@ -70,14 +74,6 @@ class ViewController: UIViewController {
             }else{
                 print("Salah bego")
             }
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "goToTopic"){
-            let nav = segue.destination as? UINavigationController
-            let dest = nav?.viewControllers.first as? TopicViewController
-            dest?.username = username
         }
     }
     

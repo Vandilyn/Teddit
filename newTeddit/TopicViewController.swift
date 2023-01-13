@@ -12,7 +12,7 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var userText: UILabel!
     
-    var username = ""
+    static var username = ""
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -24,17 +24,25 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userText.text = username
-        print("Username: \(username)")
+        usernameText()
         tableViews.delegate = self
         tableViews.dataSource = self
         tableViews.frame = view.bounds
-        userText.text = username
+        userText.text = TopicViewController.username
         let tap = UITapGestureRecognizer(target: self, action: #selector(TopicViewController.tapFunction))
         userText.isUserInteractionEnabled = true
         userText.addGestureRecognizer(tap)
         getAllItems()
-        print("Username2: \(username)")
+    }
+    
+    func usernameText(){
+        let users: User!
+        let fetchUser = User.fetchRequest()
+        fetchUser.predicate = NSPredicate(format: "email = %@", ViewController.email)
+        
+        let results = try? context.fetch(fetchUser)
+        users = results?.first
+        TopicViewController.username = users.username!
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +99,7 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         do{
             models = try context.fetch(Topic.fetchRequest())
             tableViews.reloadData()
-            userText.text = username
+            userText.text = TopicViewController.username
         }catch{
             //error
         }

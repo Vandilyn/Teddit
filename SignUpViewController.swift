@@ -13,7 +13,10 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkUser()
     }
+    
+    var users = [User]()
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -21,25 +24,52 @@ class SignUpViewController: UIViewController {
 
     @IBAction func onRegister(_ sender: Any) {
         validation()
-        print("Berhasil berhasil berhasil hore we did it...")
-        
     }
     
     func validation(){
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+   
+        if(password.text?.isEmpty == true){
+            alert.message = "Password is empty!"
+        }
+        if(email.text?.isEmpty == true){
+            alert.message = "Email is empty!"
+        }
         if(username.text?.isEmpty == true){
             alert.message = "Username is empty!"
-        }else if(email.text?.isEmpty == true){
-            alert.message = "Email is empty!"
-        }else if(password.text?.isEmpty == true){
-            alert.message = "Password is empty!"
-        }else{
-            alert.message = "Account berhasil dibuat!"
+        }
+        if(email.text?.isEmpty == false){
+            if(!validateEmailStructure(email: email.text!)){
+                alert.message = "Invalid email structure! (example@example.com)"
+            }else{
+                for i in 0...users.count-1{
+                    if(users[i].email == email.text){
+                        alert.message = "Email has already taken"
+                        break
+                    }
+                }
+            }
+        }
+        if(password.text?.isEmpty == false){
+            if(!validatePasswordStructure(password: password.text!)){
+                alert.message = "Invalid password structure!"
+            }
+        }
+        if(alert.message!.isEmpty){
             saveData()
+            alert.message = "Account berhasil dibuat!"
         }
         present(alert, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2){
             alert.dismiss(animated: true,completion:nil)
+        }
+    }
+    
+    func checkUser(){
+        do{
+            users = try context.fetch(User.fetchRequest())
+        }catch{
+            //ehe
         }
     }
     
@@ -55,4 +85,24 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    func validateEmailStructure(email: String) -> Bool{
+        let emailSplit = email.split(separator: "@")
+        let size = emailSplit.count
+        if(size==2 && emailSplit[1].hasSuffix(".com")){
+            return true
+        }
+        return false
+    }
+    
+    func validatePasswordStructure(password: String) -> Bool{
+        let size = password.count
+        for i in 0...size-1{
+            print("I adalah \(i)")
+        }
+        if(size<8){
+            return false
+        }else{
+            return true
+        }
+    }
 }

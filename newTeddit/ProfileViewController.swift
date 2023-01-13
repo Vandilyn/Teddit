@@ -26,12 +26,6 @@ class ProfileViewController: UIViewController {
         usernameTxt.text = username
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! UINavigationController
-        let tujuan = dest.viewControllers.first as! TopicViewController
-        tujuan.username = usernameTxt.text!
-    }
-    
     @IBAction func onEdit(_ sender: Any) {
         let alert = UIAlertController(
             title: "New username", message: "", preferredStyle: .alert)
@@ -41,14 +35,27 @@ class ProfileViewController: UIViewController {
             let text = field.text, !text.isEmpty else{
             return
         }
+            self?.updateUsername(currName: self!.username, name: text)
             self?.username = text
             self?.loadAll()
-            self?.updateUsername(name: text)
         }))
         present(alert, animated: true)
     }
     
-    func updateUsername(name: String){
+    func updateUsername(currName: String, name: String){
+        let users: User!
+        let fetchUser = User.fetchRequest()
+        fetchUser.predicate = NSPredicate(format: "username = %@", currName)
         
+        let results = try? context.fetch(fetchUser)
+        users = results?.first
+        do{
+            users.username = name
+            username = name
+            TopicViewController.username = name
+            try context.save()
+        }catch{
+            //ehe
+        }
     }
 }
