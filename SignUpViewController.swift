@@ -42,10 +42,12 @@ class SignUpViewController: UIViewController {
             if(!validateEmailStructure(email: email.text!)){
                 alert.message = "Invalid email structure! (example@example.com)"
             }else{
-                for i in 0...users.count-1{
-                    if(users[i].email == email.text){
-                        alert.message = "Email has already taken"
-                        break
+                if(users.count > 1){
+                    for i in 0...users.count-1{
+                        if(users[i].email == email.text){
+                            alert.message = "Email has already taken"
+                            break
+                        }
                     }
                 }
             }
