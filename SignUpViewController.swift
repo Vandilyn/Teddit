@@ -98,9 +98,6 @@ class SignUpViewController: UIViewController {
     
     func validatePasswordStructure(password: String) -> Bool{
         let size = password.count
-        for i in 0...size-1{
-            print("I adalah \(i)")
-        }
         if(size<8){
             return false
         }else{
