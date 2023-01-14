@@ -16,12 +16,11 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let models = comments[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CommentTableViewCell
-        cell.username.text = "ANON"
+        cell.username.text = models.sender
         cell.comment.text = models.text
         return cell
     }
     
-
     @IBOutlet weak var judulPost: UILabel!
     @IBOutlet weak var isiPost: UILabel!
     @IBOutlet weak var authorName: UILabel!
@@ -55,9 +54,38 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.reloadData()
     }
 
+    @IBAction func deletePost(_ sender: Any) {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        if(TopicViewController.username == authorName.text){
+            do{
+                let fetchReq = Post.fetchRequest()
+                fetchReq.predicate = NSPredicate(format: "judul = %@", judulPost.text!)
+                
+                let results = try? context.fetch(fetchReq)
+                let posts = (results?.first)!
+                
+                posts.topics?.removeFromPosts(posts)
+                context.delete(posts)
+                try? context.save()
+            }catch{
+                //ehe
+            }
+            alert.message = "Post berhasil didelete!"
+            tableView.reloadData()
+            performSegue(withIdentifier: "backToPost", sender: self)
+            
+        }else{
+            alert.message = "Invalid command! User is not author"
+        }
+        present(alert, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2){
+            alert.dismiss(animated: true,completion:nil)
+        }
+    }
+    
     @IBAction func postComment(_ sender: Any) {
         let newComment = Comment(context: context)
-        newComment.sender = "ANON"
+        newComment.sender = TopicViewController.username
         newComment.text = peopleComment.text
         newComment.date = Date()
         posts?.addToComments(newComment)

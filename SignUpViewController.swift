@@ -65,6 +65,9 @@ class SignUpViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2){
             alert.dismiss(animated: true,completion:nil)
         }
+        if(alert.message == "Account berhasil dibuat!"){
+            performSegue(withIdentifier: "toLogin", sender: self)
+        }
     }
     
     func checkUser(){

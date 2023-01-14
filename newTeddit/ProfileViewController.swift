@@ -40,22 +40,56 @@ class ProfileViewController: UIViewController {
             self?.loadAll()
         }))
         present(alert, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2){
+            alert.dismiss(animated: true,completion:nil)
+        }
     }
+    
+    @IBAction func logOutBtn(_ sender: Any) {
+        performSegue(withIdentifier: "backToLogin", sender: self)
+    }
+    
     
     func updateUsername(currName: String, name: String){
         let users: User!
+    
         let fetchUser = User.fetchRequest()
         fetchUser.predicate = NSPredicate(format: "username = %@", currName)
-        
+
         let results = try? context.fetch(fetchUser)
         users = results?.first
+      
         do{
             users.username = name
             username = name
             TopicViewController.username = name
+            
+            updatePost(currName: currName, name: name)
             try context.save()
         }catch{
             //ehe
         }
     }
+    
+    func updatePost(currName: String, name: String){
+        let posts: Post!
+        
+        let fetchPost = Post.fetchRequest()
+        fetchPost.predicate = NSPredicate(format: "author = %@", currName)
+        
+        let results = try? context.fetch(fetchPost)
+        
+        if(results?.count == 0){
+            //ehe
+        }
+        else if(results?.count == 1){
+            posts = results?.first
+            posts.author = name
+        }else{
+            for i in 0...results!.count-1{
+                results![i].author = name
+            }
+        }
+    }
+    
 }

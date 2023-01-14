@@ -24,6 +24,10 @@ class ViewController: UIViewController {
         loadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        loadData()
+    }
+    
     func loadData(){
         do{
             userList = try context.fetch(User.fetchRequest())
@@ -36,6 +40,7 @@ class ViewController: UIViewController {
     @IBAction func unwindToMain(_ unwindSegue: UIStoryboardSegue) {
        
     }
+    
     @IBAction func signInBtn(_ sender: Any) {
         //flag harusnya 0
         var flag = 0

@@ -35,6 +35,7 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         getAllItems()
     }
     
+    
     func usernameText(){
         let users: User!
         let fetchUser = User.fetchRequest()

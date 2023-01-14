@@ -26,6 +26,10 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
         getAllItems()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        getAllItems()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
     }
@@ -86,10 +90,14 @@ class postViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
+    @IBAction func unwindToPost(_ unwindSegue: UIStoryboardSegue) {
+        
+    }
+    
     func createPost(name: String, content: String){
         let newPost = Post(context: context)
         newPost.judul = name
-        newPost.author = "ANON"
+        newPost.author = TopicViewController.username
         newPost.content = content
         topic?.addToPosts(newPost)
         do{
